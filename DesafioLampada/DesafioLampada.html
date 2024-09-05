@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio-lampada</title>
     <script>
+
         function acenderLampada() {
             document.getElementById('lampada').src = 'Midia/lampada-acesa.jpg';
         }
@@ -12,11 +13,17 @@
         function apagarLampada() {
             document.getElementById('lampada').src = 'Midia/lampada-apagada.jpg';
         }
+
+        function quebrarLampada(){
+            document.getElementById('lampada').src = 'Midia/lampada-quebrada.jpg';
+        }
+
     </script>
 </head>
 <body>
     <img id="lampada" src="Midia/lampada-apagada.jpg" alt="Uma lampada-apagada"
     onmouseover="acenderLampada()" 
-    onmouseout="apagarLampada()">
+    onmouseout="apagarLampada()"
+    onclick="quebrarLampada()">
 </body>
 </html>
