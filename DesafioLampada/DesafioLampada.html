@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio-lampada</title>
+    <script>
+        function acenderLampada() {
+            document.getElementById('lampada').src = 'Midia/lampada-acesa.jpg';
+        }
+
+        function apagarLampada() {
+            document.getElementById('lampada').src = 'Midia/lampada-apagada.jpg';
+        }
+    </script>
+</head>
+<body>
+    <img id="lampada" src="Midia/lampada-apagada.jpg" alt="Uma lampada-apagada"
+    onmouseover="acenderLampada()" 
+    onmouseout="apagarLampada()">
+</body>
+</html>
