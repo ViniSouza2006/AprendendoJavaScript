@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Inicio(){
+            var NomeProd = prompt("Que Produto você está comprando?");
+            var Valor = parseFloat(prompt("Quanto custa o " + NomeProd + " que você está comprando?").replace(",", "."));
+            var ValorPago = parseFloat(prompt("Qual foi o Valor que você deu para pagar " + NomeProd + "?").replace(",", "."));
+            
+            let Troco = ValorPago - Valor;
+
+            if(ValorPago < Valor) {
+                alert("O Valor do Produto é maior que o Valor Pago!");
+            } else if(ValorPago > Valor) {
+                alert("Você Comprou " + NomeProd + " que custou R$" + Valor.toFixed(2).replace(".", ",") + 
+                      "\n Deu R$" + ValorPago.toFixed(2).replace(".", ",") + " em dinheiro e vai receber R$" + Troco.toFixed(2).replace(".", ",") + 
+                      " de troco." + "\n Volte Sempre!");
+            } else if(ValorPago == Valor) {
+                alert("Você Comprou " + NomeProd + " que custou R$" + Valor.toFixed(2).replace(".", ",") + 
+                      "\n Deu R$" + ValorPago.toFixed(2).replace(".", ",") + ", então não há troco." + "\n Volte Sempre!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculando Troco</h1>
+    <br>
+    <button onclick="Inicio()">Comprar Produto</button>
+</body>
+</html>

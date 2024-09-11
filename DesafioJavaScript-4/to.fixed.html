@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de toFixed e replace</title>
+    <script>
+        function mostrarValorFormatado() {
+            let valor = parseFloat(prompt("Digite um valor:").replace(",", "."));
+            let valorFormatado = valor.toFixed(2).replace(".", ",");
+            alert("O valor formatado é: R$" + valorFormatado);
+        }
+    </script>
+</head>
+<body>
+    <h1>Exemplo de Formatação de Valor</h1>
+    <button onclick="mostrarValorFormatado()">Mostrar Valor Formatado</button>
+</body>
+</html>

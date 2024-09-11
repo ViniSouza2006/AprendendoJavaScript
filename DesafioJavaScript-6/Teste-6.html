@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Inicio(){
+            var Celsius = parseFloat(prompt("Digite uma temperatura em °C {Celsius}"));
+            
+            // Verifica se o valor inserido é um número válido
+            if (isNaN(Celsius)) {
+                alert("Por favor, insira um número válido.");
+                return;
+            }
+
+            let CelsiusFormatado = Celsius.toFixed(1).replace(".", ",");
+            let Fahrenheit = (Celsius * 9 / 5) + 32;
+            let Kelvin = (Celsius + 273.15);
+            
+            document.getElementById("Resultado").innerHTML = 
+                "A Temperatura de " + CelsiusFormatado + "°C <br><br>corresponde a " + 
+                Kelvin.toFixed(2) + "°K {Kelvin} <br><br>e " + 
+                Fahrenheit.toFixed(2) + "°F {Fahrenheit}"; 
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>Conversor de Temperatura</h1>
+    <br>
+    <button onclick="Inicio()">Converter</button>
+    <br>
+    <p id="Resultado"></p>
+
+</body>
+</html>
+
