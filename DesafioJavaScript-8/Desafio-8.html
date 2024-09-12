@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Iniciar(){
+            var NomeProd = prompt("Qual é o produto que você está comprando?");
+            var PreçoProd = prompt("Qual é o preço do " + NomeProd + "?").replace(",", ".");
+
+            PreçoProd = parseFloat(PreçoProd);
+
+            if (isNaN(PreçoProd) || PreçoProd <= 0) {
+                alert("Por favor, insira um valor válido para o preço.");
+                return;
+            }
+
+            var Desconto = PreçoProd * 0.10;
+            var PreçoDescontado = Desconto.toFixed(2);
+            var PreçoFinal = (PreçoProd - Desconto).toFixed(2);
+            
+            document.getElementById("Enunciado").innerHTML = 
+            "Calculando desconto de 10% para " + NomeProd + "<br>" +
+            "O Preço Original era R$ " + PreçoProd.toFixed(2).replace(".", ",") + ".<br>" +
+            "Você acaba de ganhar R$ " + PreçoDescontado.replace(".", ",") + ".<br>" +
+            "No fim, você vai pagar R$ " + PreçoFinal.replace(".", ",") + " no produto " + NomeProd + ".";
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculando Desconto</h1><br>
+
+    <button onclick="Iniciar()">Desconto de 10%</button>
+    <p id="Enunciado"></p>
+</body>
+</html>

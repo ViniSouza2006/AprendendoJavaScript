@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Iniciar(){
+            var NomeFuncionário = prompt("Qual é o Nome do funcionário?");
+            let SalárioFuncionário = parseFloat(prompt("Qual é o salário de " + NomeFuncionário));
+            let ReajusteCent = prompt("O salário de " + NomeFuncionário + "Vai ser reajustado em qual porcentagem?");
+
+            document.getElementById("Resultado").innerHTML =
+            "<h1>Pedro Paulo recebeu um aumento salarial!</h1><br>" + "O Salário atual era R$" + SalárioFuncionário + ". <br>" + "Com um aumento de 18%, o salário vai aumentar R$ " + QuantAumento + "no próximo mês. <br>" + "E a partir daí, " + NomeFuncionário  
+        }
+    </script>
+</head>
+<body>
+    <h1>Reajuste salarial</h1><br>
+
+    <button>Reajustar Salário</button><br>
+
+    <p id="Resultado"></p>
+
+</body>
+</html>
