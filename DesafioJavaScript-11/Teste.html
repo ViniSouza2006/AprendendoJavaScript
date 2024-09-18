@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Ano Bissexto</title>
+</head>
+<body>
+    <h1>Verificar Ano Bissexto</h1>
+    <input min="1000" max="9999" type="number" id="yearInput" placeholder="Digite um ano">
+    <button onclick="checkLeapYear()">Verificar</button>
+    <p id="result"></p>
+
+    <script>
+        function isLeapYear(year) {
+            if (year % 4 === 0) {
+                if (year % 100 === 0) {
+                    if (year % 400 === 0) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        function checkLeapYear() {
+            const year = document.getElementById('yearInput').value;
+            const result = isLeapYear(year);
+            const resultText = result ? `${year} é um ano bissexto.` : `${year} não é um ano bissexto.`;
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
+

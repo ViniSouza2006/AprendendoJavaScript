@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reajuste Salarial</title>
     <script>
         function Iniciar(){
-            var NomeFuncionário = prompt("Qual é o Nome do funcionário?");
-            let SalárioFuncionário = parseFloat(prompt("Qual é o salário de " + NomeFuncionário));
-            let ReajusteCent = prompt("O salário de " + NomeFuncionário + "Vai ser reajustado em qual porcentagem?");
+            var NomeFuncionario = prompt("Qual é o nome do funcionário?");
+            let SalarioFuncionario = parseFloat(prompt("Qual é o salário de " + NomeFuncionario + "?").replace(',', '.'));
+            let ReajustePorcent = parseFloat(prompt("O salário de " + NomeFuncionario + " vai ser reajustado em qual porcentagem?").replace(',', '.'));
+
+            // Calcula o valor do aumento e o novo salário
+            let QuantAumento = SalarioFuncionario * (ReajustePorcent / 100);
+            let NovoSalario = SalarioFuncionario + QuantAumento;
+
+            // Formata os números com duas casas decimais e troca pontos por vírgulas
+            let SalarioFormatado = SalarioFuncionario.toFixed(2).replace('.', ',');
+            let QuantAumentoFormatado = QuantAumento.toFixed(2).replace('.', ',');
+            let NovoSalarioFormatado = NovoSalario.toFixed(2).replace('.', ',');
+            let ReajustePorcentFormatado = ReajustePorcent.toFixed(2).replace('.', ',');
 
             document.getElementById("Resultado").innerHTML =
-            "<h1>Pedro Paulo recebeu um aumento salarial!</h1><br>" + "O Salário atual era R$" + SalárioFuncionário + ". <br>" + "Com um aumento de 18%, o salário vai aumentar R$ " + QuantAumento + "no próximo mês. <br>" + "E a partir daí, " + NomeFuncionário  
+            "<h1>" + NomeFuncionario + " recebeu um aumento salarial!</h1><br>" + 
+            "O salário atual era R$" + SalarioFormatado + ".<br>" + 
+            "Com um aumento de " + ReajustePorcentFormatado + "%, o salário vai aumentar R$ " + QuantAumentoFormatado + " no próximo mês.<br>" + 
+            "E a partir daí, " + NomeFuncionario + " passará a receber R$ " + NovoSalarioFormatado + ".";
         }
     </script>
 </head>
 <body>
-    <h1>Reajuste salarial</h1><br>
+    <h1>Reajuste Salarial</h1><br>
 
-    <button>Reajustar Salário</button><br>
+    <button onclick="Iniciar()">Reajustar Salário</button><br>
 
     <p id="Resultado"></p>
-
 </body>
 </html>
