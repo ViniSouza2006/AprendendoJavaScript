@@ -4,69 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora-IMC</title>
-
-    <style>
-        .campo {
-            margin: 200px;
-            padding: 100px;
-            background-color: gold;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .divisao {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            width: 100%;
-        }
-
-        .divisao label {
-            margin-right: 10px;
-            flex-grow: 1; /* Faz o label ocupar o espaço restante */
-            text-align: right; /* Alinha o texto do label à direita */
-        }
-
-        .divisao input {
-            width: 200px; /* Define um tamanho fixo para os inputs */
-        }
-
-        button {
-            width: 200px;
-            height: 35px;
-            background-color: black;
-            color: yellow;
-            align-self: flex-end; /* Alinha o botão à direita */
-        }
-
-    </style>
+    <link rel="stylesheet" href="EstiloCalculadora.css">
     
     <script>
-        // Seu script aqui
+        function Iniciar() {
+            // Seu script aqui
+        }
     </script>
 
 </head>
 <body>
-    <fieldset class="campo">
-        <h1>Calculadora-IMC</h1>
-        <br>
-        <div class="divisao">
-            <label for="nome">Nome: </label>   
-            <input type="text" id="nome">
-        </div>
-        <div class="divisao">
-            <label for="altura">Altura: </label>
-            <input type="number" id="altura" min="1">
-        </div>
-        <div class="divisao">
-            <label for="peso">Peso: </label>
-            <input type="number" id="peso" min="1">
-        </div>
-        <button>Calcular</button><br><br>
-    </fieldset>
+    <div class="container">
+        <fieldset class="campo">
+            <h1>Calculadora-IMC</h1>
+            <br>
+            <div class="divisao">
+                <label for="nome">Nome: </label>   
+                <input type="text" id="nome">
+            </div>
+            <div class="divisao">
+                <label for="altura">Altura (m): </label>
+                <input type="number" id="altura" min="1">
+            </div>
+            <div class="divisao">
+                <label for="peso">Peso: </label>
+                <input type="number" id="peso" min="1">
+            </div>
+            <button onclick="Iniciar()">Calcular</button><br><br>
+            <div class="resultado"></div>
+        </fieldset>
+    </div>
 </body>
 </html>
