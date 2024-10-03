@@ -8,7 +8,16 @@
     
     <script>
         function Iniciar() {
-            // Seu script aqui
+            var nome = document.getElementById("nome").value;
+            var altura = document.getElementById("altura").value;
+            var peso = document.getElementById("peso").value;
+            
+            if (altura > 0 && peso > 0) {
+                var imc = peso / (altura * altura);
+                document.querySelector(".resultado").innerHTML = nome + ", seu IMC é " + imc.toFixed(2);
+            } else {
+                document.querySelector(".resultado").innerHTML = "Por favor, insira valores válidos para altura e peso.";
+            }
         }
     </script>
 
@@ -23,15 +32,15 @@
                 <input type="text" id="nome">
             </div>
             <div class="divisao">
-                <label for="altura">Altura (m): </label>
-                <input type="number" id="altura" min="1">
+                <label for="altura">Altura: </label>
+                <input type="number" id="altura" min="1" step="0.01">
             </div>
             <div class="divisao">
                 <label for="peso">Peso: </label>
-                <input type="number" id="peso" min="1">
+                <input type="number" id="peso" min="1" step="0.1">
             </div>
             <button onclick="Iniciar()">Calcular</button><br><br>
-            <div class="resultado"></div>
+            <div class="arearesultado"><p class="resultado"></p></div>
         </fieldset>
     </div>
 </body>

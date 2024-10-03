@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function trocarImagem() {
+            const semaforo = document.getElementById('Semaforo');
+            const imagens = ["Midia/Sinal_Vermelho.png", "Midia/Sinal_Amarelo.png", "Midia/Sinal_Verde.png"];
+            let index = 0;
+
+            setInterval(() => {
+                semaforo.src = imagens[index];
+                index = (index + 1) % imagens.length;
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+
+    <img id="Semaforo" src="Midia/Desligado.png" alt="Semaforo Desligado">
+    <br><br>
+    <button onclick="document.getElementById('Semaforo').src='Midia/Sinal_Vermelho.png'">Vermelho</button>
+    <button onclick="document.getElementById('Semaforo').src='Midia/Sinal_Amarelo.png'">Amarelo</button>
+    <button onclick="document.getElementById('Semaforo').src='Midia/Sinal_Verde.png'">Verde</button>
+    <button onclick="trocarImagem()">Automático</button>
+
+</body>
+</html>

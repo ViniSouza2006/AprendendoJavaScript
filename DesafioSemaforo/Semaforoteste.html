@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Vermelho(){
+            document.getElementById('Semaforo').src = "Midia/Sinal_Vermelho.png";
+        }
+
+        function Amarelo(){
+            document.getElementById('Semaforo').src = "Midia/Sinal_Amarelo.png";
+        }
+
+        function Verde(){
+            document.getElementById('Semaforo').src = "Midia/Sinal_Verde.png";
+        }
+
+        function Automático(){
+            let sinais = [Vermelho, Amarelo, Verde];
+            let index = 0;
+            setInterval(() => {
+                sinaisindex;
+                index = (index + 1) % sinais.length;
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+
+    <img id="Semaforo" src="Midia/Desligado.png" alt="Semaforo Desligado">
+    <br><br>
+    <button onclick="Vermelho()">Vermelho</button>
+    <button onclick="Amarelo()">Amarelo</button>
+    <button onclick="Verde()">Verde</button>
+    <button onclick="Automático()">Automático</button>
+
+</body>
+</html>
